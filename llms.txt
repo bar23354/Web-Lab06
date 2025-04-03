@@ -1,0 +1,49 @@
+
+---
+#llms generado con ayuda de ChatGPT 4.0
+### **llms.txt**  
+```txt  
+# Uso de la API para LLMs  
+
+Esta API permite gestionar series mediante los siguientes endpoints:  
+
+1. **Obtener todas las series**  
+   - Método: GET  
+   - URL: http://localhost:8080/api/series  
+   - Parámetros opcionales:  
+     - `search`: Buscar por título.  
+     - `status`: Filtrar por estado (Plan to Watch, Watching, Dropped, Completed).  
+     - `sort`: Ordenar por ranking (`asc` o `desc`).  
+
+2. **Crear una serie**  
+   - Método: POST  
+   - URL: http://localhost:8080/api/series  
+   - Body (JSON):  
+     ```json  
+     {  
+       "title": "Nombre de la serie",  
+       "status": "Plan to Watch",  
+       "lastEpisodeWatched": 0,  
+       "totalEpisodes": 12,  
+       "ranking": 0  
+     }  
+     ```  
+
+3. **Actualizar una serie**  
+   - Método: PUT  
+   - URL: http://localhost:8080/api/series/[ID]  
+   - Body (JSON): Campos a modificar.  
+
+4. **Eliminar una serie**  
+   - Método: DELETE  
+   - URL: http://localhost:8080/api/series/[ID]  
+
+5. **Endpoints adicionales**:  
+   - `PATCH /api/series/[ID]/status`: Actualizar estado.  
+   - `PATCH /api/series/[ID]/episode`: Incrementar episodio.  
+   - `PATCH /api/series/[ID]/upvote`: Aumentar ranking.  
+   - `PATCH /api/series/[ID]/downvote`: Disminuir ranking.  
+
+Ejemplo de solicitud para LLMs:  
+```bash  
+curl -X GET "http://localhost:8080/api/series?status=Watching&sort=desc"  
