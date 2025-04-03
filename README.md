@@ -1,5 +1,5 @@
-**Universidad del Valle de Guatemala**
-**Sistemas y Tecnologías Web - sección 20**
+**Universidad del Valle de Guatemala** |
+**Sistemas y Tecnologías Web - sección 20** |
 **Roberto Barreda #23354**
 
 # Series Tracker  
